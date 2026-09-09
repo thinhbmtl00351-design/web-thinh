@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Cá Nhân - Anh Thịnh</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            padding: 20px;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 35px 25px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+            text-align: center;
+            max-width: 450px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #222;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        /* Khu vực nút bấm */
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s ease;
+            color: #fff;
+        }
+
+        .btn-blue {
+            background: #2a5298;
+        }
+
+        .btn-blue:hover {
+            background: #1e3c72;
+            transform: scale(1.05);
+        }
+
+        .btn-red {
+            background: #e74c3c;
+        }
+
+        .btn-red:hover {
+            background: #c0392b;
+            transform: scale(1.05);
+        }
+
+        /* Khung hiển thị kết quả */
+        .result-box {
+            display: none;
+            margin-top: 15px;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Giao diện cho kết quả nút 1 */
+        .handsome-box img {
+            width: 100%;
+            max-height: 250px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .handsome-box p {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #2a5298;
+            font-size: 16px;
+        }
+
+        /* Giao diện cho kết quả nút 2 */
+        .danger-box {
+            background: #111;
+            color: #ff3333;
+            padding: 25px 15px;
+            border-radius: 12px;
+            border: 2px solid #ff3333;
+            box-shadow: 0 0 15px rgba(255, 51, 51, 0.4);
+        }
+
+        .danger-box h2 {
+            font-size: 26px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .danger-box p {
+            font-size: 14px;
+            color: #aaa;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>BẤM ĐỂ CHỌN SỐ PHẬN</h1>
+        
+        <div class="btn-group">
+            <button class="btn btn-blue" onclick="showOption(1)">Nút 1: Anh Thịnh</button>
+            <button class="btn btn-red" onclick="showOption(2)">Nút 2: Bí mật</button>
+        </div>
+
+        <!-- Kết quả Nút 1 -->
+        <div id="result1" class="result-box handsome-box">
+            <!-- Thay link ảnh tại src nếu bạn muốn dùng ảnh thật -->
+            <img src="https://cdn.phototourl.com/free/2026-09-09-7ee11834-132e-4656-ad07-2da8fd375ae4.png" alt="Anh Thịnh Đẹp Trai">
+            <p>✨ Chân dung Anh Thịnh siêu cấp đẹp trai! ✨</p>
+        </div>
+
+        <!-- Kết quả Nút 2 -->
+        <div id="result2" class="result-box danger-box">
+            <h2>☠️ BẠN ĐÃ THUA CUỘC ☠️</h2>
+            <p>(Game Over! Bạn vừa chọn nhầm nút nguy hiểm)</p>
+        </div>
+    </div>
+
+    <script>
+        function showOption(option) {
+            // Ẩn cả 2 phần kết quả trước
+            document.getElementById('result1').style.display = 'none';
+            document.getElementById('result2').style.display = 'none';
+
+            // Hiển thị phần được chọn
+            if (option === 1) {
+                document.getElementById('result1').style.display = 'block';
+            } else if (option === 2) {
+                document.getElementById('result2').style.display = 'block';
+            }
+        }
+    </script>
+
+</body>
+</html>
